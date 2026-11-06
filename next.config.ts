@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  output: process.env.NEXT_OUTPUT_STANDALONE === 'true' ? 'standalone' : undefined,
   reactStrictMode: true,
   images: {
     domains: ['cdn.nexatopup.com', 'api.digiflazz.com', 'api.midtrans.com', 'api.xendit.co'],

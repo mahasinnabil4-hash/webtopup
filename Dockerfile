@@ -7,6 +7,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 FROM base AS builder
+ENV NEXT_OUTPUT_STANDALONE=true
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npx prisma generate
